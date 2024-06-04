@@ -49,6 +49,13 @@ class Lesson(models.Model):
         help_text='Добавьте ссылку на видео'
     )
 
+    course = models.ForeignKey(
+        Course, **NULLABLE,
+        on_delete=models.SET_NULL,
+        verbose_name='курс',
+        help_text='Выберите курс'
+    )
+
     def __str__(self):
         return self.title
 
