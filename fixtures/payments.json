@@ -1,0 +1,46 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$6Q2lPUiNGtenycxAKI9Zgu$8TcoY3nyKIZ4N7greTD4w0IllndssEd/p4/U4lxI6T4=",
+      "last_login": "2024-06-05T10:35:07.622Z",
+      "is_superuser": true,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-06-05T10:34:21.399Z",
+      "email": "admin@admin.com",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.payments",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "date_payment": "2024-06-06",
+      "paid_course": 4,
+      "paid_lesson": null,
+      "sum_payment": "100000.00",
+      "payment_method": "оплата картой"
+    }
+  },
+  {
+    "model": "users.payments",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "date_payment": "2024-06-06",
+      "paid_course": 2,
+      "paid_lesson": 4,
+      "sum_payment": "10000.00",
+      "payment_method": "оплата наличными"
+    }
+  }
+]

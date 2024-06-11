@@ -1,0 +1,86 @@
+[
+  {
+    "model": "lms.course",
+    "pk": 2,
+    "fields": {
+      "title": "Маркетинг с нуля",
+      "description": "Вы научитесь управлять маркетингом компании на всех этапах: от анализа и разработки стратегии до оценки метрик. Сможете вырасти до руководителя и принимать важные решения.",
+      "picture": ""
+    }
+  },
+  {
+    "model": "lms.course",
+    "pk": 4,
+    "fields": {
+      "title": "Программирование для начинающих",
+      "description": "Курс по программированию: основы и продвинутые концепции.",
+      "picture": ""
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 1,
+    "fields": {
+      "title": "Урок 1. Основы маркетинга",
+      "description": "",
+      "picture": "",
+      "link_to_video": null,
+      "course": 2
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 2,
+    "fields": {
+      "title": "Урок 2. Стратегия маркетинга",
+      "description": "",
+      "picture": "",
+      "link_to_video": null,
+      "course": 2
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 3,
+    "fields": {
+      "title": "Урок 3. Реклама и продвижение",
+      "description": "",
+      "picture": "",
+      "link_to_video": null,
+      "course": 2
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 4,
+    "fields": {
+      "title": "Урок 1. Введение в программирование",
+      "description": "",
+      "picture": "",
+      "link_to_video": null,
+      "course": 4
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 5,
+    "fields": {
+      "title": "Урок 2. Структуры данных и алгоритмы",
+      "description": "",
+      "picture": "",
+      "link_to_video": null,
+      "course": 4
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 6,
+    "fields": {
+      "title": "Урок 3. Функции и рекурсия",
+      "description": "",
+      "picture": "",
+      "link_to_video": null,
+      "course": 4
+    }
+  }
+]
