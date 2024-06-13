@@ -5,7 +5,8 @@
     "fields": {
       "title": "Маркетинг с нуля",
       "description": "Вы научитесь управлять маркетингом компании на всех этапах: от анализа и разработки стратегии до оценки метрик. Сможете вырасти до руководителя и принимать важные решения.",
-      "picture": ""
+      "picture": "",
+      "owner": 3
     }
   },
   {
@@ -14,7 +15,8 @@
     "fields": {
       "title": "Программирование для начинающих",
       "description": "Курс по программированию: основы и продвинутые концепции.",
-      "picture": ""
+      "picture": "",
+      "owner": null
     }
   },
   {
@@ -25,7 +27,8 @@
       "description": "",
       "picture": "",
       "link_to_video": null,
-      "course": 2
+      "course": 2,
+      "owner": 3
     }
   },
   {
@@ -36,7 +39,8 @@
       "description": "",
       "picture": "",
       "link_to_video": null,
-      "course": 2
+      "course": 2,
+      "owner": 3
     }
   },
   {
@@ -47,7 +51,8 @@
       "description": "",
       "picture": "",
       "link_to_video": null,
-      "course": 2
+      "course": 2,
+      "owner": 3
     }
   },
   {
@@ -58,7 +63,8 @@
       "description": "",
       "picture": "",
       "link_to_video": null,
-      "course": 4
+      "course": 4,
+      "owner": null
     }
   },
   {
@@ -69,7 +75,8 @@
       "description": "",
       "picture": "",
       "link_to_video": null,
-      "course": 4
+      "course": 4,
+      "owner": null
     }
   },
   {
@@ -80,7 +87,8 @@
       "description": "",
       "picture": "",
       "link_to_video": null,
-      "course": 4
+      "course": 4,
+      "owner": null
     }
   }
 ]
