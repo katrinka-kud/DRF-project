@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 NULLABLE = {"null": True, "blank": True}
@@ -16,6 +17,10 @@ class Course(models.Model):
         verbose_name="превью (картинка)",
         help_text="Загрузите картинку"
     )
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE, **NULLABLE,
+        verbose_name="владелец")
 
     def __str__(self):
         return self.title
@@ -53,6 +58,10 @@ class Lesson(models.Model):
         verbose_name="курс",
         help_text="Выберите курс"
     )
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE, **NULLABLE,
+        verbose_name="владелец")
 
     def __str__(self):
         return self.title
