@@ -5,7 +5,7 @@ class IsModerator(BasePermission):
     message = "Вы не состоите в группе 'moderator'"
 
     def has_permission(self, request, view):
-        return request.user.groups.filter(name='moderator').exists()
+        return request.user.groups.filter(name="moderator").exists()
 
 
 class IsOwner(BasePermission):
@@ -15,3 +15,10 @@ class IsOwner(BasePermission):
         if obj.owner == request.user:
             return True
         return False
+
+
+class IsSubscriber(BasePermission):
+    message = "Вы не являетесь подписчиком"
+
+    def has_permission(self, request, view):
+        return request.user == view.get_object().user

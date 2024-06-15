@@ -31,7 +31,15 @@ urlpatterns = [
         PaymentsUpdateAPIView.as_view(),
         name="payments-update",
     ),
-    path("login/", TokenObtainPairView.as_view(permission_classes=(AllowAny,)), name="token_obtain_pair"),
-    path("token/refresh/", TokenRefreshView.as_view(permission_classes=(AllowAny,)), name="token_refresh"),
+    path(
+        "login/",
+        TokenObtainPairView.as_view(permission_classes=(AllowAny,)),
+        name="token_obtain_pair",
+    ),
+    path(
+        "token/refresh/",
+        TokenRefreshView.as_view(permission_classes=(AllowAny,)),
+        name="token_refresh",
+    ),
     path("register/", UsersCreateAPIView.as_view(), name="register"),
 ] + router.urls
