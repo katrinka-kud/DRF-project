@@ -66,8 +66,26 @@ class Payments(models.Model):
         max_length=20,
         default=PAYMENT_CARD,
         choices=PAYMENT_CHOICES,
-        verbose_name="способ оплаты",
+        verbose_name="способ оплаты"
     )
+
+    session_id = models.CharField(
+        max_length=255,
+        **NULLABLE,
+        verbose_name="идентификатор сессии"
+    )
+    link = models.URLField(
+        max_length=400,
+        **NULLABLE,
+        verbose_name="ссылка на оплату"
+    )
+    session_status = models.CharField(
+        max_length=50,
+        **NULLABLE,
+        verbose_name="статус оплаты"
+    )
+
+    is_paid = models.BooleanField(default=False, verbose_name="оплачено")
 
     class Meta:
         verbose_name = "платеж"
