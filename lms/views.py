@@ -50,7 +50,7 @@ class LessonCreateAPIView(CreateAPIView):
 
 class LessonListAPIView(ListAPIView):
     queryset = Lesson.objects.all()
-    filterset_fields = "course"
+    filterset_fields = ("course",)
     serializer_class = LessonSerializer
     permission_classes = [IsAuthenticated]
     pagination_class = LmsPagination
