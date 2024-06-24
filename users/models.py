@@ -59,30 +59,20 @@ class Payments(models.Model):
     paid_lesson = models.ForeignKey(
         Lesson, on_delete=models.CASCADE, verbose_name="оплаченный урок", **NULLABLE
     )
-    sum_payment = models.DecimalField(
-        max_digits=15, decimal_places=2, verbose_name="сумма оплаты"
-    )
+    sum_payment = models.PositiveIntegerField(verbose_name="сумма оплаты")
     payment_method = models.CharField(
         max_length=20,
         default=PAYMENT_CARD,
         choices=PAYMENT_CHOICES,
-        verbose_name="способ оплаты"
+        verbose_name="способ оплаты",
     )
 
     session_id = models.CharField(
-        max_length=255,
-        **NULLABLE,
-        verbose_name="идентификатор сессии"
+        max_length=255, **NULLABLE, verbose_name="идентификатор сессии"
     )
-    link = models.URLField(
-        max_length=400,
-        **NULLABLE,
-        verbose_name="ссылка на оплату"
-    )
+    link = models.URLField(max_length=400, **NULLABLE, verbose_name="ссылка на оплату")
     session_status = models.CharField(
-        max_length=50,
-        **NULLABLE,
-        verbose_name="статус оплаты"
+        max_length=50, **NULLABLE, verbose_name="статус оплаты"
     )
 
     is_paid = models.BooleanField(default=False, verbose_name="оплачено")
