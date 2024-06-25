@@ -9,6 +9,7 @@ from lms.models import Course, Lesson, Subscription
 from lms.paginations import LmsPagination
 from lms.serializers import (CourseDetailSerializer, CourseSerializer,
                              LessonSerializer, SubscriptionSerializer)
+from lms.tasks import send_email
 from users.permissions import IsModerator, IsOwner, IsSubscriber
 
 
@@ -35,6 +36,10 @@ class CourseViewSet(ModelViewSet):
         elif self.action == "destroy":
             self.permission_classes = (~IsModerator | IsOwner,)
         return super().get_permissions()
+
+    def update(self, request, *args, **kwargs):
+        send_email.delay(self.kwargs.get('pk'))
+        return super().update(request)
 
 
 class LessonCreateAPIView(CreateAPIView):

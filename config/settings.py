@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "drf_yasg",
     "corsheaders",
     "drf_spectacular",
+    "django_celery_beat",
 
     "lms",
     "users",
@@ -134,3 +135,28 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 STRIPE_API_KEY = getenv("STRIPE_API_KEY")
+
+CELERY_BROKER_URL = "redis://127.0.0.1:6379/0"
+CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379/0"
+CELERY_TIMEZONE = TIME_ZONE
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
+
+CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
+
+CELERY_BEAT_SCHEDULE = {
+    "check_inactive_users": {
+        "task": "lms.tasks.check_inactive_users",
+        "schedule": timedelta(minutes=1),
+    },
+}
+
+EMAIL_HOST = getenv('EMAIL_HOST')
+EMAIL_PORT = getenv('EMAIL_PORT')
+EMAIL_HOST_USER = getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = getenv('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = getenv('EMAIL_USE_TLS', False) == 'True'
+EMAIL_USE_SSL = getenv('EMAIL_USE_SSL', False) == 'True'
+
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
