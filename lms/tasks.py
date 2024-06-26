@@ -2,6 +2,7 @@ from datetime import datetime, timezone, timedelta
 
 from celery import shared_task
 from django.conf import settings
+from django.core.mail import send_mail
 
 from lms.models import Course, Subscription
 from users.models import User
@@ -12,7 +13,7 @@ def send_email(course_id):
     course = Course.objects.get(pk=course_id)
     search_subscribers = Subscription.objects.get(course=course_id)
 
-    send_email(
+    send_mail(
         subject=f'Курс "{course}" обновлен',
         message=f'Обновился курс "{course}" на который вы подписаны',
         from_email=settings.EMAIL_HOST_USER,
